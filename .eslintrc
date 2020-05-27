@@ -1,0 +1,55 @@
+{
+	// Specifies the ESLint parser
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+    "plugin:jsx-a11y/recommended",
+    
+    "airbnb",
+
+		// Prettier plugin and recommended rules
+		"prettier/@typescript-eslint",
+		"plugin:prettier/recommended"
+	],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"env": {
+		"browser": true,
+		"node": true,
+		"es6": true
+	},
+	"plugins": ["@typescript-eslint", "react", "prettier", "react-hooks", "jsx-a11y", "emotion"],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		// Allows for the parsing of modern ECMAScript features
+		"ecmaVersion": 2018,
+		// Allows for the use of imports
+		"sourceType": "module"
+	},
+	"rules": {
+		// Include .prettierrc.js rules
+		"prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+		// Disable prop-types as we use TypeScript for type checking
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/interface-name-prefix": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/ban-ts-ignore": "off",
+		// needed for NextJS's jsx without react import
+    "react/react-in-jsx-scope": "off",
+    
+    //Emotion Config
+    "emotion/jsx-import": "error"
+	},
+	"globals": { "React": "writable" }
+}
