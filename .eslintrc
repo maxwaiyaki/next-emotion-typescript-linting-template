@@ -3,12 +3,18 @@
 	"parser": "@typescript-eslint/parser",
 	"extends": [
 		"eslint:recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings",
+		"plugin:import/typescript",
+
 		"plugin:react/recommended",
+
 		"plugin:@typescript-eslint/recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
-    "plugin:jsx-a11y/recommended",
-    
-    "airbnb",
+
+		"plugin:jsx-a11y/recommended",
+
+		"airbnb",
 
 		// Prettier plugin and recommended rules
 		"prettier/@typescript-eslint",
@@ -24,7 +30,15 @@
 		"node": true,
 		"es6": true
 	},
-	"plugins": ["@typescript-eslint", "react", "prettier", "react-hooks", "jsx-a11y", "emotion"],
+	"plugins": [
+		"@typescript-eslint",
+		"react",
+		"prettier",
+		"react-hooks",
+		"jsx-a11y",
+		"emotion",
+		"import"
+	],
 	"parserOptions": {
 		"ecmaFeatures": {
 			"jsx": true
@@ -38,18 +52,26 @@
 		// Include .prettierrc.js rules
 		"prettier/prettier": ["error", {}, { "usePrettierrc": true }],
 		// Disable prop-types as we use TypeScript for type checking
-    "react/prop-types": "off",
-    "react-hooks/rules-of-hooks": "error",
+		"react/prop-types": "off",
+		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
 		"@typescript-eslint/explicit-function-return-type": "off",
 		"@typescript-eslint/interface-name-prefix": "off",
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/ban-ts-ignore": "off",
-		// needed for NextJS's jsx without react import
-    "react/react-in-jsx-scope": "off",
-    
-    //Emotion Config
-    "emotion/jsx-import": "error"
+		// Indent with 4 spaces
+		"indent": ["error", 2],
+
+		// Indent JSX with 2 spaces
+		"react/jsx-indent": ["error", 2],
+
+		// Indent props with 2 spaces
+		"react/jsx-indent-props": ["error", 2],
+		"react/react-in-jsx-scope": "off",
+		"react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+
+		//Emotion Config
+		"emotion/jsx-import": "error"
 	},
 	"globals": { "React": "writable" }
 }
