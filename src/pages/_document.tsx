@@ -1,6 +1,5 @@
 /* eslint-disable react/no-danger */
 import Document, {
-  Html,
   Head,
   Main,
   NextScript,
@@ -34,13 +33,13 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang='en'>
+      <html lang='en'>
         <Head />
         <body>
           <Main />
           <NextScript />
         </body>
-      </Html>
+      </html>
     );
   }
 }
